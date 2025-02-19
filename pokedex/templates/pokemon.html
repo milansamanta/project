@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ data['name'] | capitalize}}
+{% endblock %}
+
+{% block main %}
+    <div class="conatiner-fluid p-1">
+        <img class="img-fluid" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ data['id'] }}.png" alt="{{ data['name'] }}">
+        <p class="m-0 text-center fw-bold">#{{ data['id'] }} {{ data['name'] | capitalize }}</p>
+        <div class="mx-auto text-center">
+            {% for types in data['types'] %}
+                <span class="type mx-1 {{ types.type['name'] }}">{{ types.type['name'] | capitalize }}</span>
+            {% endfor %}
+        </div>
+        
+    </div>
+    <div class="container-fluid my-4 text-center">
+        <h3 class="fw-bold">Stats</h3>
+        <table class="table text-start ">
+            {% for stat in data["stats"] %}
+            <tr>
+                <td>{{stat["stat"]["name"] | capitalize}}</td>
+                <td class="value">{{stat["base_stat"]}}</td>
+                <td style="width:70%;"><div class="chart m-0, p-0"></div></td>
+            </tr>
+            
+            {% endfor %}
+        </table>
+        
+    </div>
+{% endblock %}

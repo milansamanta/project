@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+{% block main %}
+<div class="grid">
+    {% for pokemon in data %}
+        <div class="content" id="{{ pokemon['id'] }}"><a href="/pokemon/{{ pokemon['id']}}"><img class="img-fluid" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon['id'] }}.png" alt="{{ pokemon['name'] }}">#{{ pokemon['id'] }} {{ pokemon["name"] | capitalize}}</a></div>
+    {% endfor %}
+</div>
+{% endblock %}
