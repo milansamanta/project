@@ -1,0 +1,212 @@
+
+.navbar-brand{
+    display: flex;
+}
+.logo {
+    width:30px;
+    height: auto;
+}
+.red{
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px  1px 0 black,
+        1px  1px 0 black;
+    color: red;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.white{
+    color:white;
+    text-shadow: 
+        -1px -1px 0 black,  /* Top-left shadow */
+        1px -1px 0 black,  /* Top-right shadow */
+        -1px  1px 0 black,  /* Bottom-left shadow */
+        1px  1px 0 black;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 20px; /* Space between grid items */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    padding: 10px;
+}
+
+
+.content {
+    background-color: #fff;
+    background-image: url(./ball.png);
+    background-position: right top;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.content img {
+    width: 100%; 
+    height: auto;
+}
+
+.content h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.content p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 10px 10px;
+    line-height: 1.4;
+}
+
+.content a{
+    text-decoration: none;
+    color: #333;   
+}
+
+@media (max-width: 768px) {
+    .content h3 {
+        font-size: 0.95rem;
+    }
+    .content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Reduce body padding on small screens */
+    }
+    .grid {
+        gap: 15px; /* Reduce grid gap on small screens */
+    }
+    .content {
+        border-radius: 5px;
+    }
+}
+
+
+.type {
+    padding: 0.4rem 0.7rem;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2rem;
+    color: #ffff;
+    box-shadow: #333;
+}
+
+.bug {
+    background-color: #A6B91A;
+}
+
+.fire {
+    background-color: #EE8130;
+}
+
+.rock {
+    background-color: #B6A136;
+}
+
+.normal	{
+    background-color: #A8A77A
+}
+.water {
+    background-color: #6390F0;
+}
+
+.electric {
+    background-color: #F7D02C;
+}
+
+.grass {
+    background-color: #7AC74C;
+}
+
+.ice {
+    background-color: #96D9D6;
+}
+
+.fighting {
+    background-color: #C22E28;
+}
+
+.poison	{
+    background-color: #A33EA1;
+}
+
+.ground	{
+    background-color: #E2BF65;
+}
+
+.flying	{
+    background-color: #A98FF3;
+}
+
+.psychic {
+    background-color: #F95587;
+}
+
+.ghost {
+    background-color: #735797;
+}
+
+.dragon	{
+    background-color: #6F35FC;
+}
+
+.dark {
+    background-color: #705746;
+}
+
+.steel {
+    background-color: #B7B7CE;
+}	
+
+.fairy {
+    background-color: #D685AD;
+}
+
+.searchedbox{
+    list-style: none;
+    margin: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(236, 25, 25, 0.7);
+    max-height: 30vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    min-width: 13vw;
+    z-index: 1;
+}
+.searchedbox li a{
+    text-decoration: none;
+    color: white;
+}
+td{
+    vertical-align: middle;
+}
+.chart { 
+    border: 1px solid #737373;
+    border-radius: 4px;
+    height: 0.75rem;
+    transition: width 0.5s ease-in-out; /* Smooth animation */
+}

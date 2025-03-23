@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %} Home {% endblock %}
+{% block main %}
+    <div class="grid">
+        {% set ns = namespace(index=factor*20 +1) %}
+        {% for pokemon in data["results"] %}
+            <div class="content" id="{{ ns.index }}"><a href="/pokemon/{{ ns.index }}"><img class="img-fluid" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ ns.index }}.png" alt="{{ pokemon['name'] }}">#{{ ns.index }} {{ pokemon["name"] | capitalize}}</a></div>
+            {% set ns.index = ns.index+1 %}
+        {% endfor %}
+    </div>
+{% if data["previous"] %}
+    <a href="/{{ factor-1 }}" class="btn btn-primary" role="button">previous</a>
+{% endif %}
+{% if data["next"] %}
+    <a role="button" class="btn btn-primary" href="/{{ factor+1 }}">next</a>
+{% endif %}
+{% endblock %}
